@@ -13,6 +13,7 @@
 //         root=newnode;
 //         return root;
 //     }
+
 //     if(element<root->data){
 //         root->left=insert(root->left,element);
 //     }
