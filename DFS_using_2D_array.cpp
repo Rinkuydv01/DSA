@@ -13,7 +13,7 @@ void DFS(int start,int matrix[100][100],int V){
         cout<<node<<" ";
         s.pop();
         
-        for(int i=0;i<V;i++){
+        for(int i=V-1;i>=0;i--){
             if(matrix[node][i]==1 && !visited[i]){
                 s.push(i);
                 visited[i]=true;
