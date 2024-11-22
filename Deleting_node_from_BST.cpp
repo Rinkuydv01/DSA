@@ -119,10 +119,11 @@ void inorder(node* root){
 }
 
 struct node* minimumsuccessor(node* root){
-    if(root==nullptr){
-        return root;
+    node* temp=root;
+    while(temp!=nullptr && temp->left!=nullptr){
+        temp=temp->left;
     }
-    return minimumsuccessor(root->left);
+    return temp;
 }
 bool ispresent=true;
 struct node* deletenode(node* root,int element){
