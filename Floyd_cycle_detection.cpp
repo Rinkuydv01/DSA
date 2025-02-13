@@ -1,18 +1,14 @@
 bool floydCycleDetection(Node* head){
-    if(head==NULL){
+    if(head==NULL || head->next==NULL){
         return false;
     }
     Node* slow = head;
     Node* fast = head;
-    
-    while(slow!=NULL && fast!=NULL){
-        fast=fast->next;
-        if(fast->next!=NULL){
-            fast = fast->next;
-        }
+
+    while(fast!=NULL && fast->next!=NULL){
         slow = slow->next;
-        
-        if(fast==slow){
+        fast = fast->next->next;
+        if(slow==fast){
             return true;
         }
     }
